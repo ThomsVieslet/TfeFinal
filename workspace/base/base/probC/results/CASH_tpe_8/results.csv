@@ -1,0 +1,9 @@
+,feature_0,feature_1,feature_2,feature_3,feature_4,model,activation,batchSize,lr,nLayers,optimizer,loss,status,time
+0,0,0,1,0,1,nnClassifier,tanh,31,constant,6,adam,0.4894810659186536,ok,13.84312951299944
+1,1,0,1,1,1,nnClassifier,identity,9,constant,6,adam,0.48807854137447404,ok,25.089135609014193
+2,0,0,0,1,1,nnClassifier,relu,15,constant,8,adam,0.4964936886395512,ok,41.61908313201275
+3,0,0,1,1,1,nnClassifier,tanh,10,invscaling,9,adam,0.48667601683029454,ok,72.42516134900507
+4,0,0,1,1,0,nnClassifier,tanh,10,adaptive,8,lbfgs,0.5035063113604488,ok,87.3473079050018
+5,1,1,1,0,0,nnClassifier,tanh,27,invscaling,9,sgd,0.4838709677419355,ok,97.63812607602449
+6,0,1,1,1,0,nnClassifier,identity,10,adaptive,9,sgd,0.4950911640953717,ok,110.11623511702055
+7,0,0,1,0,0,nnClassifier,tanh,16,adaptive,2,adam,0.48667601683029454,ok,114.41900735502713

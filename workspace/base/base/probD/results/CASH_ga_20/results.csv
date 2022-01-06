@@ -1,0 +1,2 @@
+activation,algorithm,batchSize,criterion,feature_0,feature_1,feature_2,leaf_size,lr,max_depth,max_features,min_samples_leaf,min_samples_split,model,nLayers,n_neighbors,optimizer,weights,loss_best
+selu,kd_tree,12,gini,1,1,0,34,0.07772476801378496,94,sqrt,5,39,randomForestClassifier,10,8,Adam,uniform,0.9536637931034483

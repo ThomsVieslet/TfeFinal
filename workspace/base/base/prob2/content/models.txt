@@ -1,0 +1,3 @@
+nnRegressor
+randomForestRegressor
+kneighborsRegressor

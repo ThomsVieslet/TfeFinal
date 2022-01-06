@@ -1,0 +1,159 @@
+2021-12-07 12:56:47|17586|INFO|deephyper:69] 
+
+Loading Deephyper
+--------------
+2021-12-07 12:56:47|17586|INFO|deephyper.search.search:50] Maximizing the return value of function: base.prob1.model_run.run
+2021-12-07 12:56:47|17586|INFO|deephyper.evaluator._subprocess:96] Subprocess Evaluator will execute run() from module base.prob1.model_run
+2021-12-07 12:56:47|17586|INFO|deephyper.search.search:60] Options: {   'acq_func': 'gp_hedge',
+    'acq_kappa': 1.96,
+    'backend': 'tensorflow',
+    'cache_key': 'to_dict',
+    'eval_timeout_minutes': 4096,
+    'evaluator': 'subprocess',
+    'func': <function main at 0x7f6fe511eb90>,
+    'liar_strategy': 'cl_max',
+    'max_evals': 2,
+    'n_jobs': -1,
+    'problem': 'base.prob1.prob_space.Problem',
+    'redis_address': None,
+    'run': 'base.prob1.model_run.run',
+    'seed': None,
+    'surrogate_model': 'RF'}
+2021-12-07 12:56:47|17586|INFO|deephyper.search.search:62] Hyperparameter space definition: Configuration space object:
+  Hyperparameters:
+    activation, Type: Categorical, Choices: {relu, sigmoid, softmax, softplus, softsign, tanh, selu, elu}, Default: relu
+    batchSize, Type: UniformInteger, Range: [8, 32], Default: 20
+    feature_0, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_1, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_10, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_11, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_2, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_3, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_4, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_5, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_6, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_7, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_8, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_9, Type: Categorical, Choices: {1, 0}, Default: 1
+    lr, Type: UniformFloat, Range: [1e-05, 0.1], Default: 0.050005
+    model, Type: Categorical, Choices: {nnRegressor}, Default: nnRegressor
+    nLayers, Type: UniformInteger, Range: [1, 10], Default: 6
+    neurons, Type: UniformInteger, Range: [1, 3000], Default: 1500
+    optimizer, Type: Categorical, Choices: {Adam, RMSprop, Adadelta, Adagrad, Adamax, Nadam, Ftrl}, Default: Adam
+  Conditions:
+    activation | model == 'nnRegressor'
+    batchSize | model == 'nnRegressor'
+    lr | model == 'nnRegressor'
+    nLayers | model == 'nnRegressor'
+    neurons | model == 'nnRegressor'
+    optimizer | model == 'nnRegressor'
+
+2021-12-07 12:56:47|17586|INFO|deephyper.search.search:63] Created subprocess evaluator
+2021-12-07 12:56:47|17586|INFO|deephyper.search.search:64] Evaluator: num_workers is 1
+2021-12-07 12:56:47|17586|INFO|deephyper.search.hps.ambs:50] Initializing AMBS
+2021-12-07 12:56:47|17586|INFO|deephyper.search.hps.optimizer.optimizer:108] Using skopt.Optimizer with RF base_estimator
+2021-12-07 12:56:47|17586|INFO|deephyper.search.hps.ambs:93] Generating 1 initial points...
+2021-12-07 12:56:49|17586|INFO|deephyper.evaluator.evaluate:181] Submitted new eval of {'feature_0': '1', 'feature_1': '1', 'feature_10': '0', 'feature_11': '0', 'feature_2': '0', 'feature_3': '0', 'feature_4': '1', 'feature_5': '0', 'feature_6': '1', 'feature_7': '1', 'feature_8': '1', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'elu', 'batchSize': 28, 'lr': 0.008480596206362758, 'nLayers': 3, 'neurons': 1304, 'optimizer': 'Adamax'}
+2021-12-07 12:56:49|17586|INFO|deephyper.search.hps.ambs:99] Elapsed time: 00:00:0.00
+2021-12-07 12:56:51|17586|INFO|deephyper.evaluator.evaluate:276] New eval finished: {"feature_0": "1", "feature_1": "1", "feature_10": "0", "feature_11": "0", "feature_2": "0", "feature_3": "0", "feature_4": "1", "feature_5": "0", "feature_6": "1", "feature_7": "1", "feature_8": "1", "feature_9": "1", "model": "nnRegressor", "activation": "elu", "batchSize": 28, "lr": 0.008480596206362758, "nLayers": 3, "neurons": 1304, "optimizer": "Adamax"} --> -3.4028234663852886e+38
+2021-12-07 12:56:51|17586|INFO|deephyper.evaluator.evaluate:287] Requested eval x: {'feature_0': '1', 'feature_1': '1', 'feature_10': '0', 'feature_11': '0', 'feature_2': '0', 'feature_3': '0', 'feature_4': '1', 'feature_5': '0', 'feature_6': '1', 'feature_7': '1', 'feature_8': '1', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'elu', 'batchSize': 28, 'lr': 0.008480596206362758, 'nLayers': 3, 'neurons': 1304, 'optimizer': 'Adamax'} y: -3.4028234663852886e+38
+2021-12-07 12:56:51|17586|INFO|deephyper.search.hps.ambs:106] Refitting model with batch of 1 evals
+2021-12-07 12:56:51|17586|DEBUG|deephyper.search.hps.optimizer.optimizer:199] tell: {'feature_0': '1', 'feature_1': '1', 'feature_10': '0', 'feature_11': '0', 'feature_2': '0', 'feature_3': '0', 'feature_4': '1', 'feature_5': '0', 'feature_6': '1', 'feature_7': '1', 'feature_8': '1', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'elu', 'batchSize': 28, 'lr': 0.008480596206362758, 'nLayers': 3, 'neurons': 1304, 'optimizer': 'Adamax'} --> ('1', '1', '0', '0', '0', '0', '1', '0', '1', '1', '1', '1', 'nnRegressor', 'elu', 28, 0.008480596206362758, 3, 1304, 'Adamax'): evaluated objective: -3.4028234663852886e+38
+2021-12-07 12:56:51|17586|INFO|deephyper.search.hps.ambs:109] Drawing 1 points with strategy cl_max
+2021-12-07 12:56:52|17586|DEBUG|deephyper.search.hps.optimizer.optimizer:152] _ask: ['1', '1', '0', '1', '0', '1', '0', '1', '0', '0', '1', '0', 'nnRegressor', 'softplus', 27, 0.05800500467401571, 10, 2042, 'Adadelta'] lie: -0.0
+2021-12-07 12:56:52|17586|INFO|deephyper.evaluator.evaluate:181] Submitted new eval of {'feature_0': '1', 'feature_1': '1', 'feature_10': '0', 'feature_11': '1', 'feature_2': '0', 'feature_3': '1', 'feature_4': '0', 'feature_5': '1', 'feature_6': '0', 'feature_7': '0', 'feature_8': '1', 'feature_9': '0', 'model': 'nnRegressor', 'activation': 'softplus', 'batchSize': 27, 'lr': 0.05800500467401571, 'nLayers': 10, 'neurons': 2042, 'optimizer': 'Adadelta'}
+2021-12-07 12:56:54|17586|INFO|deephyper.search.hps.ambs:99] Elapsed time: 00:00:5.38
+2021-12-07 12:56:54|17586|ERROR|deephyper.evaluator._subprocess:48] Eval failed: Traceback (most recent call last):
+  File "/home/thoms/Desktop/stage/stage1/lib/python3.7/site-packages/deephyper/evaluator/runner.py", line 37, in <module>
+    retval = func(d)
+  File "/home/thoms/Desktop/stage/tfe_automl_vieslet/workspace/base/base/prob1/model_run.py", line 67, in run
+    (x_train, y_train), (x_valid, y_valid) = load_data(point)
+  File "/home/thoms/Desktop/stage/tfe_automl_vieslet/workspace/base/base/prob1/load_data_avocado.py", line 31, in load_data
+    train_X = np.load("prob1/datasets/custom/train_X.npy",allow_pickle=True)
+  File "/home/thoms/Desktop/stage/stage1/lib/python3.7/site-packages/numpy/lib/npyio.py", line 417, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'prob1/datasets/custom/train_X.npy'
+
+2021-12-07 12:56:54|17586|INFO|deephyper.evaluator.evaluate:276] New eval finished: {"feature_0": "1", "feature_1": "1", "feature_10": "0", "feature_11": "1", "feature_2": "0", "feature_3": "1", "feature_4": "0", "feature_5": "1", "feature_6": "0", "feature_7": "0", "feature_8": "1", "feature_9": "0", "model": "nnRegressor", "activation": "softplus", "batchSize": 27, "lr": 0.05800500467401571, "nLayers": 10, "neurons": 2042, "optimizer": "Adadelta"} --> -3.4028234663852886e+38
+2021-12-07 12:56:54|17586|INFO|deephyper.evaluator.evaluate:287] Requested eval x: {'feature_0': '1', 'feature_1': '1', 'feature_10': '0', 'feature_11': '1', 'feature_2': '0', 'feature_3': '1', 'feature_4': '0', 'feature_5': '1', 'feature_6': '0', 'feature_7': '0', 'feature_8': '1', 'feature_9': '0', 'model': 'nnRegressor', 'activation': 'softplus', 'batchSize': 27, 'lr': 0.05800500467401571, 'nLayers': 10, 'neurons': 2042, 'optimizer': 'Adadelta'} y: -3.4028234663852886e+38
+2021-12-07 12:56:54|17586|INFO|deephyper.search.hps.ambs:121] Hyperopt driver finishing
+2021-12-07 12:58:01|18080|INFO|deephyper:69] 
+
+Loading Deephyper
+--------------
+2021-12-07 12:58:01|18080|INFO|deephyper.search.search:50] Maximizing the return value of function: base.prob1.model_run.run
+2021-12-07 12:58:01|18080|INFO|deephyper.evaluator._subprocess:96] Subprocess Evaluator will execute run() from module base.prob1.model_run
+2021-12-07 12:58:01|18080|INFO|deephyper.search.search:60] Options: {   'acq_func': 'gp_hedge',
+    'acq_kappa': 1.96,
+    'backend': 'tensorflow',
+    'cache_key': 'to_dict',
+    'eval_timeout_minutes': 4096,
+    'evaluator': 'subprocess',
+    'func': <function main at 0x7f3c81a01b90>,
+    'liar_strategy': 'cl_max',
+    'max_evals': 2,
+    'n_jobs': -1,
+    'problem': 'base.prob1.prob_space.Problem',
+    'redis_address': None,
+    'run': 'base.prob1.model_run.run',
+    'seed': None,
+    'surrogate_model': 'RF'}
+2021-12-07 12:58:01|18080|INFO|deephyper.search.search:62] Hyperparameter space definition: Configuration space object:
+  Hyperparameters:
+    activation, Type: Categorical, Choices: {relu, sigmoid, softmax, softplus, softsign, tanh, selu, elu}, Default: relu
+    batchSize, Type: UniformInteger, Range: [8, 32], Default: 20
+    feature_0, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_1, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_10, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_11, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_2, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_3, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_4, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_5, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_6, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_7, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_8, Type: Categorical, Choices: {1, 0}, Default: 1
+    feature_9, Type: Categorical, Choices: {1, 0}, Default: 1
+    lr, Type: UniformFloat, Range: [1e-05, 0.1], Default: 0.050005
+    model, Type: Categorical, Choices: {nnRegressor}, Default: nnRegressor
+    nLayers, Type: UniformInteger, Range: [1, 10], Default: 6
+    neurons, Type: UniformInteger, Range: [1, 3000], Default: 1500
+    optimizer, Type: Categorical, Choices: {Adam, RMSprop, Adadelta, Adagrad, Adamax, Nadam, Ftrl}, Default: Adam
+  Conditions:
+    activation | model == 'nnRegressor'
+    batchSize | model == 'nnRegressor'
+    lr | model == 'nnRegressor'
+    nLayers | model == 'nnRegressor'
+    neurons | model == 'nnRegressor'
+    optimizer | model == 'nnRegressor'
+
+2021-12-07 12:58:01|18080|INFO|deephyper.search.search:63] Created subprocess evaluator
+2021-12-07 12:58:01|18080|INFO|deephyper.search.search:64] Evaluator: num_workers is 1
+2021-12-07 12:58:01|18080|INFO|deephyper.search.hps.ambs:50] Initializing AMBS
+2021-12-07 12:58:01|18080|INFO|deephyper.search.hps.optimizer.optimizer:108] Using skopt.Optimizer with RF base_estimator
+2021-12-07 12:58:01|18080|INFO|deephyper.search.hps.ambs:93] Generating 1 initial points...
+2021-12-07 12:58:02|18080|INFO|deephyper.evaluator.evaluate:181] Submitted new eval of {'feature_0': '1', 'feature_1': '0', 'feature_10': '0', 'feature_11': '1', 'feature_2': '1', 'feature_3': '0', 'feature_4': '0', 'feature_5': '0', 'feature_6': '1', 'feature_7': '0', 'feature_8': '0', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'softsign', 'batchSize': 8, 'lr': 0.09849814881251008, 'nLayers': 8, 'neurons': 428, 'optimizer': 'Adadelta'}
+2021-12-07 12:58:02|18080|INFO|deephyper.search.hps.ambs:99] Elapsed time: 00:00:0.00
+2021-12-07 12:58:04|18080|INFO|deephyper.evaluator.evaluate:276] New eval finished: {"feature_0": "1", "feature_1": "0", "feature_10": "0", "feature_11": "1", "feature_2": "1", "feature_3": "0", "feature_4": "0", "feature_5": "0", "feature_6": "1", "feature_7": "0", "feature_8": "0", "feature_9": "1", "model": "nnRegressor", "activation": "softsign", "batchSize": 8, "lr": 0.09849814881251008, "nLayers": 8, "neurons": 428, "optimizer": "Adadelta"} --> -3.4028234663852886e+38
+2021-12-07 12:58:04|18080|INFO|deephyper.evaluator.evaluate:287] Requested eval x: {'feature_0': '1', 'feature_1': '0', 'feature_10': '0', 'feature_11': '1', 'feature_2': '1', 'feature_3': '0', 'feature_4': '0', 'feature_5': '0', 'feature_6': '1', 'feature_7': '0', 'feature_8': '0', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'softsign', 'batchSize': 8, 'lr': 0.09849814881251008, 'nLayers': 8, 'neurons': 428, 'optimizer': 'Adadelta'} y: -3.4028234663852886e+38
+2021-12-07 12:58:04|18080|INFO|deephyper.search.hps.ambs:106] Refitting model with batch of 1 evals
+2021-12-07 12:58:04|18080|DEBUG|deephyper.search.hps.optimizer.optimizer:199] tell: {'feature_0': '1', 'feature_1': '0', 'feature_10': '0', 'feature_11': '1', 'feature_2': '1', 'feature_3': '0', 'feature_4': '0', 'feature_5': '0', 'feature_6': '1', 'feature_7': '0', 'feature_8': '0', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'softsign', 'batchSize': 8, 'lr': 0.09849814881251008, 'nLayers': 8, 'neurons': 428, 'optimizer': 'Adadelta'} --> ('1', '0', '0', '1', '1', '0', '0', '0', '1', '0', '0', '1', 'nnRegressor', 'softsign', 8, 0.09849814881251008, 8, 428, 'Adadelta'): evaluated objective: -3.4028234663852886e+38
+2021-12-07 12:58:05|18080|INFO|deephyper.search.hps.ambs:109] Drawing 1 points with strategy cl_max
+2021-12-07 12:58:05|18080|DEBUG|deephyper.search.hps.optimizer.optimizer:152] _ask: ['1', '1', '1', '1', '1', '0', '1', '0', '1', '1', '1', '1', 'nnRegressor', 'softmax', 19, 0.014227006618209893, 5, 1349, 'Adadelta'] lie: -0.0
+2021-12-07 12:58:05|18080|INFO|deephyper.evaluator.evaluate:181] Submitted new eval of {'feature_0': '1', 'feature_1': '1', 'feature_10': '1', 'feature_11': '1', 'feature_2': '1', 'feature_3': '0', 'feature_4': '1', 'feature_5': '0', 'feature_6': '1', 'feature_7': '1', 'feature_8': '1', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'softmax', 'batchSize': 19, 'lr': 0.014227006618209893, 'nLayers': 5, 'neurons': 1349, 'optimizer': 'Adadelta'}
+2021-12-07 12:58:07|18080|INFO|deephyper.search.hps.ambs:99] Elapsed time: 00:00:5.03
+2021-12-07 12:58:07|18080|ERROR|deephyper.evaluator._subprocess:48] Eval failed: /home/thoms/Desktop/stage/tfe_automl_vieslet/workspace/base/base/prob1
+Traceback (most recent call last):
+  File "/home/thoms/Desktop/stage/stage1/lib/python3.7/site-packages/deephyper/evaluator/runner.py", line 37, in <module>
+    retval = func(d)
+  File "/home/thoms/Desktop/stage/tfe_automl_vieslet/workspace/base/base/prob1/model_run.py", line 68, in run
+    (x_train, y_train), (x_valid, y_valid) = load_data(point)
+  File "/home/thoms/Desktop/stage/tfe_automl_vieslet/workspace/base/base/prob1/load_data_avocado.py", line 31, in load_data
+    train_X = np.load("prob1/datasets/custom/train_X.npy",allow_pickle=True)
+  File "/home/thoms/Desktop/stage/stage1/lib/python3.7/site-packages/numpy/lib/npyio.py", line 417, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'prob1/datasets/custom/train_X.npy'
+
+2021-12-07 12:58:07|18080|INFO|deephyper.evaluator.evaluate:276] New eval finished: {"feature_0": "1", "feature_1": "1", "feature_10": "1", "feature_11": "1", "feature_2": "1", "feature_3": "0", "feature_4": "1", "feature_5": "0", "feature_6": "1", "feature_7": "1", "feature_8": "1", "feature_9": "1", "model": "nnRegressor", "activation": "softmax", "batchSize": 19, "lr": 0.014227006618209893, "nLayers": 5, "neurons": 1349, "optimizer": "Adadelta"} --> -3.4028234663852886e+38
+2021-12-07 12:58:07|18080|INFO|deephyper.evaluator.evaluate:287] Requested eval x: {'feature_0': '1', 'feature_1': '1', 'feature_10': '1', 'feature_11': '1', 'feature_2': '1', 'feature_3': '0', 'feature_4': '1', 'feature_5': '0', 'feature_6': '1', 'feature_7': '1', 'feature_8': '1', 'feature_9': '1', 'model': 'nnRegressor', 'activation': 'softmax', 'batchSize': 19, 'lr': 0.014227006618209893, 'nLayers': 5, 'neurons': 1349, 'optimizer': 'Adadelta'} y: -3.4028234663852886e+38
+2021-12-07 12:58:07|18080|INFO|deephyper.search.hps.ambs:121] Hyperopt driver finishing

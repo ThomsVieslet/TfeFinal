@@ -1,0 +1,2 @@
+criterion,max_depth,max_features,min_samples_leaf,min_samples_split,loss_Tested,loss_Best
+mae,27,log2,3,33,0.9999010613999177,0.9999010613999177

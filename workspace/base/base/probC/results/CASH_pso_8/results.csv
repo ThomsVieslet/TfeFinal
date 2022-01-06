@@ -1,0 +1,9 @@
+feature_0,feature_1,feature_2,feature_3,feature_4,model,activation,batchSize,lr,nLayers,optimizer,loss_best
+1,0,1,0,1,nnClassifier,relu,22,constant,10,sgd,0.47685834502103785
+1,1,1,1,0,nnClassifier,tanh,18,constant,8,sgd,0.4964936886395512
+1,0,1,0,0,nnClassifier,tanh,27,constant,10,sgd,0.5021037868162693
+1,0,1,0,0,nnClassifier,tanh,27,constant,8,sgd,0.47545582047685836
+1,1,1,1,1,nnClassifier,relu,24,constant,10,lbfgs,0.5021037868162693
+1,1,1,1,1,nnClassifier,relu,22,constant,10,lbfgs,0.5007012622720898
+1,1,1,1,1,nnClassifier,relu,27,constant,10,lbfgs,0.5021037868162693
+1,1,1,1,1,nnClassifier,relu,28,constant,10,lbfgs,0.5021037868162693
