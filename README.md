@@ -17,7 +17,14 @@ The code is located in "workspace/base/base". It is composed of the following pa
     * baseMS.py which implements a generic class for model selection algorithms
     * cash.py which is used in our simulations to add the models and the constraints to the search space
     * The model_utils folder:
-      * add_kneighborsClassifier.py
+      * add_kneighborsClassifier.py adds the kneighborsClassifier model to the search space together with its hyperparameters and the constraints
+      * add_kneighborsRegressor.py adds the kneighborsRegressor model to the search space together with its hyperparameters and the constraints
+      * add_nnClassifier.py adds the nnClassifier model to the search space together with its hyperparameters and the constraints
+      * add_nnRegressor.py adds the nnRegressor model to the search space together with its hyperparameters and the constraints
+      * add_randomForestClassifier.py adds the randomForestClassifier model to the search space together with its hyperparameters and the constraints
+      * add_randomForestRegressor.py adds the randomForestRegressor model to the search space together with its hyperparameters and the constraints
+      * ambs_write.py adds the corresponding input model to the search sapce together with its hyperparameters and the constraints by writting inside the       prob_space.py file of the task
+     *
                     
   
 
