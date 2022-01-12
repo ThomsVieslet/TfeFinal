@@ -14,6 +14,14 @@ import time
 import random
 import threading
 
+"""
+********************************************************************************
+transpose_space:
+    * Arguments: configSpace
+    * Return: a list of the bounds (limits) and a list specifying the types of
+        variables.
+********************************************************************************
+"""
 
 def transpose_space(configSpace):
     limits = []
@@ -36,6 +44,15 @@ def transpose_space(configSpace):
     return limits, map
 
 
+"""
+********************************************************************************
+from_conf_to_gene:
+    * Arguments: a configuration and the configSpace
+    * Return: a gene representation of the configuration (a list with all values
+        and categories one hot encoded)
+********************************************************************************
+"""
+
 def from_conf_to_gene(config, configSpace):
     limits = []
 
@@ -49,6 +66,16 @@ def from_conf_to_gene(config, configSpace):
         else:
             limits.append(config.get_dictionary()[i])
     return limits
+
+
+"""
+********************************************************************************
+from_dict_to_gene:
+    * Arguments: a configuration (as a dictionnary) and the configSpace
+    * Return: a gene representation of the configuration (a list with all values
+        and categories one hot encoded)
+********************************************************************************
+"""
 
 def from_dict_to_gene(config, configSpace):
     limits = []
@@ -64,6 +91,15 @@ def from_dict_to_gene(config, configSpace):
             limits.append(config[i])
 
     return limits
+
+
+"""
+********************************************************************************
+from_gene_to_config:
+    * Arguments: a gene and the configSpace
+    * Return: the configuration as a dictionnary
+********************************************************************************
+"""
 
 def from_gene_to_config(gene ,configSpace):
 
@@ -87,6 +123,13 @@ def from_gene_to_config(gene ,configSpace):
     return new_conf
 
 
+"""
+********************************************************************************
+formate_pos:
+    * Formates a new position
+********************************************************************************
+"""
+
 def formate_pos(new_position, bounds):
     if new_position > bounds[1]:
         return bounds[1]
@@ -99,7 +142,13 @@ def formate_pos(new_position, bounds):
             return new_position
 
 
-
+"""
+********************************************************************************
+Population:
+    * contain all infos about the population
+    * implements all GA operations
+********************************************************************************
+"""
 class Population():
     def __init__(self, problem_space, pop_size, nMate, mod_run):
         self.mod_run = mod_run
@@ -228,8 +277,13 @@ class Population():
 
         return offspring_crossover
 
-
-
+"""
+********************************************************************************
+algorithm:
+    * inherits from HPT_algo
+    * run GA
+********************************************************************************
+"""
 class algorithm(HPT_algo):
     def __init__(self, problem, max_evals, argv):
         super().__init__(problem, max_evals, argv)

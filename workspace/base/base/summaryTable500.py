@@ -4,6 +4,13 @@ import pandas as pd
 import os
 import  subprocess
 
+"""
+********************************************************************************
+    * Test the evaluate the best configuration  and creates the
+        summary table.
+********************************************************************************
+"""
+
 
 directories = next(os.walk(os. getcwd()+"/results_history_500"))[1]
 
@@ -66,7 +73,7 @@ for i in directories:
         test_accuracy = mod_run.run(best_conf, test=True)
 
         to_add[j.split("_")[1]] = round(test_accuracy,4)
-        
+
         algo_names.append(j.split("_")[1])
         scoresL.append(test_accuracy)
         os.chdir("../")
@@ -86,4 +93,4 @@ for i in directories:
     new_data = new_data.append(to_add, ignore_index=True)
 
 
-new_data.to_csv("Summary_500_RS")
+new_data.to_csv("Summary_500")

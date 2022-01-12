@@ -3,6 +3,13 @@ import numpy as np
 import keras
 import tensorflow
 
+"""
+********************************************************************************
+load_test:
+    * load the train and return it to calling function
+    * load the test set and return it to calling function
+********************************************************************************
+"""
 def load_test(point = None):
     train_X = np.load("datasets/custom/train_X.npy",allow_pickle=True)
     train_y = np.load("datasets/custom/train_y.npy",allow_pickle=True)
@@ -26,6 +33,14 @@ def load_test(point = None):
         #new_features_names = np.delete(features_names, ind_rem)
 
     return (trans_train_X, train_y), (trans_test_X, test_y)
+
+"""
+********************************************************************************
+load_data:
+    * load the train and return it to calling function
+    * load the validation set and return it to calling function
+********************************************************************************
+"""
 
 def load_data(point = None):
     train_X = np.load("prob1/datasets/custom/train_X.npy",allow_pickle=True)

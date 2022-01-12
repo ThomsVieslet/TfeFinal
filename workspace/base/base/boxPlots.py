@@ -5,6 +5,15 @@ import os
 import  subprocess
 import matplotlib.pyplot as plt
 
+
+"""
+********************************************************************************
+    * Produces the boxplots of all evaluations scores for all methods.
+********************************************************************************
+"""
+
+
+
 sims = next(os.walk(os. getcwd()+"/results_history_500/probR"))[2]
 
 dataScore = pd.DataFrame(columns=[ "ambs", "ga", "pso", "rs", "tpe"])
@@ -19,18 +28,9 @@ for i in sims:
     else:
         loss = "loss"
 
-    """
-    l = 0
-    for j in files:
-        if l >= 5:
-            break
-        data = pd.read_csv(os. getcwd()+"/results_history_500/probR"+ "/"+i+"/"+j)
-        runs.append(data)
 
-        l = l + 1
-    """
     tmp = pd.read_csv(os. getcwd()+"/results_history_500/probR"+ "/"+i)
-    #tmp = pd.concat(runs, ignore_index=True)
+
     dataScore[i.split("_")[1]] = tmp[loss]
     dataModel[i.split("_")[1]] = tmp["model"]
 

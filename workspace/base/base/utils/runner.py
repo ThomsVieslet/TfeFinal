@@ -9,7 +9,11 @@ import os
 import psutil
 
 """
-Run Feature Selection that can be followed by other steps
+********************************************************************************
+run_FS:
+    * Run Feature Selection that can be followed by other steps with appropriate
+        args.
+********************************************************************************
 """
 def run_FS(problem, method, budget, argv):
     meth = importlib.import_module("FS." + method , package=None)
@@ -17,7 +21,11 @@ def run_FS(problem, method, budget, argv):
     algo.run()
 
 """
-Run Model Selection that can be followed by other steps
+********************************************************************************
+run_MS:
+    * Run Model Selection that can be followed by other steps with approriate
+        args.
+********************************************************************************
 """
 def run_MS(problem, method, budget, argv):
     meth = importlib.import_module("MS." + method , package=None)
@@ -27,7 +35,11 @@ def run_MS(problem, method, budget, argv):
 
 
 """
-Run Hyperparameter Tuning that can be followed by other steps
+********************************************************************************
+run_HPT:
+    * Run Hyperparameter Tuning (optimization) that can be followed by other
+     steps with approriate args.
+********************************************************************************
 """
 def run_HPT(problem, method, budget, argv):
     meth = importlib.import_module("HPT." + method , package=None)
@@ -36,7 +48,11 @@ def run_HPT(problem, method, budget, argv):
 
 
 """
-Run the CASH problem with Features as hyperparameters too
+********************************************************************************
+run_CASH:
+    * Run the CASH problem with Features with Feature Selection with the
+        approriate args.
+********************************************************************************
 """
 def run_CASH(problem, method, budget, argv):
     meth = importlib.import_module("FS.cash"  , package=None)

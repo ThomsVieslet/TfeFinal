@@ -11,6 +11,12 @@ from threading import Timer
 import deephyper
 import sys
 
+"""
+********************************************************************************
+    * Only method not inheriting from HPT_algo because built before
+    * Run the DeepHyper command with the appropriate args
+********************************************************************************
+"""
 class algorithm:
     def __init__(self, problem, max_evals, argv):
 
@@ -22,7 +28,7 @@ class algorithm:
             self.time = int(max_evals.replace("s",""))
         else:
             self.evals = int(max_evals)
-        
+
     def run(self):
         if hasattr(self, 'evals'):
 
@@ -54,18 +60,3 @@ class algorithm:
             my_timer = Timer(self.time, kill, [process])
             my_timer.start()
             output, error = process.communicate()
-
-
-
-
-        """
-        files = [f for f in os.listdir('.') if (os.path.isfile(f) and ("results" in f))]
-
-        for i in files:
-            if i == "results.csv" :
-                cU.nameIt(i, str(len(files)))
-
-
-        files = [f for f in os.listdir('.') if os.path.isfile(f)]
-        print(files)
-        """

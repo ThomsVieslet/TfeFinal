@@ -6,7 +6,14 @@ import  subprocess
 
 import re
 
-
+"""
+********************************************************************************
+    * add the models specified in each prob folder to the search space by calling
+        the scripts in model_utils
+    * constraints are added the same way if relevant
+    * a ambs_write.py file if run when using ambs
+********************************************************************************
+"""
 
 
 class algorithm(MS_algo):

@@ -11,6 +11,11 @@ import matplotlib
 from IPython.display import Image
 import colorsys
 
+"""
+********************************************************************************
+    * Makes the Selected Features ratio plots for the specified task.
+********************************************************************************
+"""
 
 def scale_lightness(rgb, scale_l):
     # convert rgb to hls

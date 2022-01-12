@@ -11,6 +11,12 @@ import matplotlib
 from IPython.display import Image
 
 
+"""
+********************************************************************************
+    * Makes the Scores Evolution plots for the specified task.
+********************************************************************************
+"""
+
 sims = next(os.walk(os. getcwd()+"/results_history/prob1"))[1]
 
 dataScore = {"ambs": np.zeros((100, 5)),  "ga": np.zeros((100, 5)), "pso": np.zeros((100, 5)), "rs": np.zeros((100, 5)), "tpe": np.zeros((100, 5))}

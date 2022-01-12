@@ -1,6 +1,13 @@
 import csv
 import os
 
+
+"""
+********************************************************************************
+    * 2 functions used to deal with csv files
+********************************************************************************
+"""
+
 def nameIt(path, name):
     path2 = path.split(".")[0] + "_"+ name + "." + path.split(".")[1]
     os.rename(path,path2)

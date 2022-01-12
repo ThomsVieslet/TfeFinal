@@ -3,6 +3,14 @@ import utils.runner as runner
 from abc import ABCMeta, abstractmethod
 
 
+"""
+********************************************************************************
+FS_algo:
+    * the generic class for Features Selection methods
+    * implement generic run method
+********************************************************************************
+"""
+
 class FS_algo:
     def __init__(self, problem, max_evals, argv):
         if "s" in max_evals:
@@ -55,7 +63,7 @@ class FS_algo:
         np.save(self.prob + "/datasets/custom/valid_y", self.valid_y)
 
 
-        np.save("prob2/datasets/custom/names", self.new_features_names)
+        np.save(self.prob + "/datasets/custom/names", self.new_features_names)
 
     @abstractmethod
     def iterate(self):

@@ -7,6 +7,13 @@ from HPT.baseHPT import HPT_algo
 import time
 
 
+"""
+********************************************************************************
+algorithm:
+    * inherits from HPT_algo
+    * implements the run method which performs a random search
+********************************************************************************
+"""
 class algorithm(HPT_algo):
 
 

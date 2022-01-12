@@ -2,6 +2,13 @@ import numpy as np
 import utils.runner as runner
 from abc import ABCMeta, abstractmethod
 
+"""
+********************************************************************************
+MS_algo:
+    * the generic class for Model Selection methods
+    * implement generic run method
+********************************************************************************
+"""
 
 class MS_algo:
     def __init__(self, problem, max_evals, argv):

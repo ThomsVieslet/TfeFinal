@@ -3,6 +3,13 @@ import numpy as np
 import keras
 import tensorflow
 
+"""
+********************************************************************************
+load_test:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and test set. With the selected features if point != None
+********************************************************************************
+"""
 
 def load_test(point = None):
     train_X = np.load("datasets/custom/train_X.npy",allow_pickle=True)
@@ -29,6 +36,14 @@ def load_test(point = None):
     return (trans_train_X, train_y), (trans_test_X, test_y)
 
 
+"""
+********************************************************************************
+load_data:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and validation set. With the selected features if
+        point != None
+********************************************************************************
+"""
 
 def load_data(point = None):
   train_X = np.load("prob2/datasets/custom/train_X.npy",allow_pickle=True)

@@ -3,13 +3,20 @@ import numpy as np
 import keras
 import tensorflow
 
+"""
+********************************************************************************
+load_test:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and test set. With the selected features if point != None
+********************************************************************************
+"""
+
 def load_test(point = None):
     train_X = np.load("datasets/custom/train_X.npy",allow_pickle=True)
     train_y = np.load("datasets/custom/train_y.npy",allow_pickle=True)
     test_X = np.load("datasets/custom/test_X.npy",allow_pickle=True)
     test_y = np.load("datasets/custom/test_y.npy",allow_pickle=True)
     features_names = np.load("datasets/custom/names.npy",allow_pickle=True)
-    nClasses = np.load("datasets/original/Class.npy",allow_pickle=True)
 
     if point is not None:
         ind_rem = []
@@ -26,10 +33,17 @@ def load_test(point = None):
         trans_test_X = np.delete(test_X, ind_rem, axis=1)
         #new_features_names = np.delete(features_names, ind_rem)
 
-    return (trans_train_X, train_y), (trans_test_X, test_y), nClasses
+    return (trans_train_X, train_y), (trans_test_X, test_y)
 
 
-
+"""
+********************************************************************************
+load_data:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and validation set. With the selected features if
+        point != None
+********************************************************************************
+"""
 
 def load_data(point = None):
   train_X = np.load("probI/datasets/custom/train_X.npy",allow_pickle=True)

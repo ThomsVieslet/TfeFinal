@@ -3,6 +3,12 @@ import utils.runner as runner
 from abc import ABCMeta, abstractmethod
 import importlib
 
+"""
+********************************************************************************
+HPT_algo:
+    * the generic class for the true optimization methods 
+********************************************************************************
+"""
 
 class HPT_algo:
     def __init__(self, problem, max_evals, argv):

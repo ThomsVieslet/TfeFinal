@@ -1,6 +1,13 @@
 import numpy as np
 import ConfigSpace as cs
 
+"""
+********************************************************************************
+    * adds randomForestRegressor to the search space
+    * adds its corresponding hyperparameters
+    * adds the conditions
+********************************************************************************
+"""
 
 def run(problem, model):
     criterion = problem.add_hyperparameter(["mse", "mae", "poisson"], "criterion")
@@ -12,13 +19,13 @@ def run(problem, model):
 
 
 
-    
+
     problem.add_condition(cs.EqualsCondition(criterion, model, "randomForestRegressor"))
     problem.add_condition(cs.EqualsCondition(max_features, model, "randomForestRegressor"))
     problem.add_condition(cs.EqualsCondition(max_depth, model, "randomForestRegressor"))
     problem.add_condition(cs.EqualsCondition(min_samples_split, model, "randomForestRegressor"))
     problem.add_condition(cs.EqualsCondition(min_samples_leaf, model, "randomForestRegressor"))
-    
+
 
     start = ", criterion=\"mse\", max_depth=1, min_samples_split=2, min_samples_leaf=1 , max_features=\"auto\""
 

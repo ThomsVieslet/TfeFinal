@@ -1,6 +1,14 @@
 import numpy as np
 import ConfigSpace as cs
 
+
+"""
+********************************************************************************
+    * adds nnClassifier to the search space
+    * adds its corresponding hyperparameters
+    * adds the conditions
+********************************************************************************
+"""
 def run(problem, model):
     activation = problem.add_hyperparameter(['relu', 'tanh', 'identity', 'logistic'], 'activation')
     nLayers = problem.add_hyperparameter((1, 10), 'nLayers')

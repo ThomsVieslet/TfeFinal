@@ -5,6 +5,14 @@ import tensorflow
 
 
 
+"""
+********************************************************************************
+load_test:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and test set. With the selected features if point != None
+********************************************************************************
+"""
+
 def load_test(point = None):
     train_X = np.load("datasets/custom/train_X.npy",allow_pickle=True)
     train_y = np.load("datasets/custom/train_y.npy",allow_pickle=True)
@@ -29,6 +37,15 @@ def load_test(point = None):
 
     return (trans_train_X, train_y), (trans_test_X, test_y)
 
+
+"""
+********************************************************************************
+load_data:
+    * Arguments:  point is a dictionnary expressing a configuration or None
+    * Return: train and validation set. With the selected features if
+        point != None
+********************************************************************************
+"""
 def load_data(point = None):
   train_X = np.load("prob3/datasets/custom/train_X.npy",allow_pickle=True)
   train_y = np.load("prob3/datasets/custom/train_y.npy",allow_pickle=True)
@@ -52,7 +69,7 @@ def load_data(point = None):
 
 
               j =  j + 1
-     
+
       trans_train_X = np.delete(train_X, ind_rem, axis=1)
       trans_valid_X = np.delete(valid_X, ind_rem, axis=1)
       #new_features_names = np.delete(features_names, ind_rem)

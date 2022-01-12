@@ -4,8 +4,13 @@ from FS.baseFS import  FS_algo
 import textwrap
 import  subprocess
 
-
-
+"""
+********************************************************************************
+    * add the features to the search space in order to run the CASH Problem
+    * iterate adds to the configSpace object
+    * run_ambs adds the features to the file prob_space.py
+********************************************************************************
+"""
 
 class algorithm(FS_algo):
     def __init__(self, problem, max_evals, argv):
@@ -36,7 +41,7 @@ class algorithm(FS_algo):
         self.trans_train_X = self.train_X
         self.trans_valid_X = self.valid_X
         self.evals =  0
-        
+
         self.start = start
 
     def run_ambs(self):

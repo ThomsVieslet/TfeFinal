@@ -6,6 +6,15 @@ import  subprocess
 import matplotlib.pyplot as plt
 from matplotlib.colors import ListedColormap
 
+
+"""
+********************************************************************************
+    * Extracts the stats from the summary table.
+********************************************************************************
+"""
+
+
+
 data = pd.read_csv("SummaryCl_500_RS.csv")
 
 results = {"ambs": np.zeros(25), "ga": np.zeros(25), "pso": np.zeros(25), "rs": np.zeros(25), "tpe": np.zeros(25)}

@@ -40,8 +40,14 @@ import tensorflow as tf
 from sklearn.neural_network import MLPClassifier
 from sklearn.preprocessing import StandardScaler
 
-#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
+"""
+********************************************************************************
+    * Arguments: point (the configuration as a dict) and test
+        (specify if testing)
+    * Return: the evaluation of the trained model on the validation set if
+        test=False and on the test set if test=True.
+********************************************************************************
+"""
 
 
 HISTORY = list()

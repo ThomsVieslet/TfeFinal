@@ -29,8 +29,14 @@ from load_data import load_data, load_test
 from joblib import dump, load
 
 
-#os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
-
+"""
+********************************************************************************
+    * Arguments: point (the configuration as a dict) and test
+        (specify if testing)
+    * Return: the evaluation of the trained model on the validation set if
+        test=False and on the test set if test=True.
+********************************************************************************
+"""
 
 HISTORY = list()
 

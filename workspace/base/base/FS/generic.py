@@ -5,6 +5,14 @@ from FS.baseFS import  FS_algo
 import numpy as np
 import joblib
 
+
+"""
+********************************************************************************
+    * Select the features using generic sklearn selector  
+    * Not used for CASH
+********************************************************************************
+"""
+
 class algorithm(FS_algo):
     def __init__(self, problem, max_evals, argv):
         super().__init__(problem, max_evals, argv)

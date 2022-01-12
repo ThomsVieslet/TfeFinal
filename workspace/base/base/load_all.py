@@ -4,6 +4,11 @@ import utils.runner as runner
 import importlib
 import os
 
+"""
+********************************************************************************
+    * Make a new 3 way split of the data
+********************************************************************************
+"""
 probs = next(os.walk(os. getcwd()))[1]
 
 for problem in probs:

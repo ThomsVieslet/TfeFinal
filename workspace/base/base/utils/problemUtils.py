@@ -4,6 +4,15 @@ from sklearn_genetic.space import Continuous, Categorical, Integer
 import nevergrad as ng
 from hyperopt import hp
 
+
+
+"""
+********************************************************************************
+    * All functions to map a configSpace representation to another.
+********************************************************************************
+"""
+
+
 def from_problem_to_hyperopt(Problem):
     confSpaceProb =  Problem._space
     paramGrid = {}
@@ -29,7 +38,7 @@ def from_problem_to_hyperopt(Problem):
                 lsModels.append(modelParam)
 
             paramGrid[i.name] = hp.choice(i.name, lsModels)
-            
+
 
     return paramGrid
 

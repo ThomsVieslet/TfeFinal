@@ -15,6 +15,13 @@ from hyperopt import fmin, tpe, hp, STATUS_OK, Trials
 import os
 
 
+"""
+********************************************************************************
+algorithm:
+    * inherits from HPT_algo
+    * implements the run method which use hyperopt to performs a search with TPE
+********************************************************************************
+"""
 
 tic = 0
 
@@ -65,7 +72,7 @@ class algorithm(HPT_algo):
             params2["loss"] = -self.mod_run.run(params2)
             params2["status"] = STATUS_OK
             params2["time"] = time.perf_counter() - tic
-        
+
             #elf.monitor_callback(params2, score)
             return params2
 

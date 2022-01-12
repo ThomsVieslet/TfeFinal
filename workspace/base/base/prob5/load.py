@@ -7,35 +7,17 @@ import pandas as pd
 from datetime import *
 from sklearn.preprocessing import OneHotEncoder
 
-def load_test(point = None):
-    train_X = np.load("datasets/custom/train_X.npy",allow_pickle=True)
-    train_y = np.load("datasets/custom/train_y.npy",allow_pickle=True)
-    test_X = np.load("datasets/custom/test_X.npy",allow_pickle=True)
-    test_y = np.load("datasets/custom/test_y.npy",allow_pickle=True)
-    features_names = np.load("datasets/custom/names.npy",allow_pickle=True)
-
-    if point is not None:
-        ind_rem = []
-        j = 0
-        for i in point:
-            if "feature_" in i:
-                if point[i] == "0":
-                    ind_rem.append(j)
-
-
-                j =  j + 1
-
-        trans_train_X = np.delete(train_X, ind_rem, axis=1)
-        trans_test_X = np.delete(test_X, ind_rem, axis=1)
-        #new_features_names = np.delete(features_names, ind_rem)
-
-    return (trans_train_X, train_y), (trans_test_X, test_y)
+"""
+********************************************************************************
+    * load training, validation and test sets from original datset.
+********************************************************************************
+"""
 
 def load():
     print("Loading...")
     data = pd.read_csv("prob5/datasets/dataset_2175_kin8nm.csv")
 
-    
+
 
     train, rest_data = train_test_split(data, test_size=0.2)
 

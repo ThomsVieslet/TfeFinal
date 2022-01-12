@@ -1,6 +1,13 @@
 import numpy as np
 import ConfigSpace as cs
 
+"""
+********************************************************************************
+    * adds randomForestClassifier to the search space
+    * adds its corresponding hyperparameters
+    * adds the conditions
+********************************************************************************
+"""
 
 def run(problem, model):
     criterion = problem.add_hyperparameter(["gini", "entropy"], "criterion")

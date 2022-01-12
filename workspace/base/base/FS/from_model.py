@@ -8,6 +8,12 @@ import joblib
 from pathlib import Path
 
 
+"""
+********************************************************************************
+    * Select the features based on the trained model
+    * Not used for CASH
+********************************************************************************
+"""
 class algorithm(FS_algo):
     def __init__(self, problem, max_evals, argv):
         super().__init__(problem, max_evals, argv)
@@ -16,7 +22,7 @@ class algorithm(FS_algo):
     def iterate(self):
 
         filename = self.prob + "/content/model_" + self.next_step_name + ".joblib"
-        
+
         loaded_model =  None
 
 

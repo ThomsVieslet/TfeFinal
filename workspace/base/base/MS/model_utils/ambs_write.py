@@ -1,5 +1,12 @@
 import numpy as np
 
+"""
+********************************************************************************
+    * adds model to the search space specified in prob_space.py file
+    * adds its corresponding hyperparameters
+    * adds the conditions
+********************************************************************************
+"""
 
 def run(model, file):
     lines = open(file, 'r').readlines()

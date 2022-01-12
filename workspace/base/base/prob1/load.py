@@ -7,6 +7,13 @@ import pandas as pd
 from datetime import *
 from sklearn.preprocessing import OneHotEncoder
 
+"""
+********************************************************************************
+load:
+    * load the original dataset
+    * split it in train, validation and test set
+********************************************************************************
+"""
 
 def load(point = None):
     print("Loading...")
@@ -38,6 +45,13 @@ def load(point = None):
 
 
 
+"""
+********************************************************************************
+clean_avocado:
+    * clean avocado dataset
+    * prepare avocado dataset
+********************************************************************************
+"""
 
 def clean_avocado(data):
     firstDate = data["Date"].min()

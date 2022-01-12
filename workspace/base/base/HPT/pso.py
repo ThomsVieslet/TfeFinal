@@ -12,6 +12,19 @@ import nevergrad as ng
 import math
 import time
 
+
+
+
+
+"""
+********************************************************************************
+transpose_space:
+    * Arguments: configSpace
+    * Return: a list of the bounds (limits) and a list specifying the types of
+        variables.
+********************************************************************************
+"""
+
 def transpose_space(configSpace):
     limits = []
     map = []
@@ -33,6 +46,15 @@ def transpose_space(configSpace):
     return limits, map
 
 
+"""
+********************************************************************************
+from_conf_to_pos:
+    * Arguments: a configuration and the configSpace
+    * Return: a position representation of the configuration (a list with all
+        values and categories one hot encoded)
+********************************************************************************
+"""
+
 def from_conf_to_pos(config, configSpace):
     limits = []
 
@@ -47,6 +69,15 @@ def from_conf_to_pos(config, configSpace):
             limits.append(config.get_dictionary()[i])
 
     return limits
+
+
+"""
+********************************************************************************
+from_pos_to_config:
+    * Arguments: a position and the configSpace
+    * Return: the configuration as a dictionnary
+********************************************************************************
+"""
 
 def from_pos_to_config(pos ,configSpace):
 
@@ -72,6 +103,13 @@ def from_pos_to_config(pos ,configSpace):
     return new_conf
 
 
+"""
+********************************************************************************
+formate_pos:
+    * Formates a new position
+********************************************************************************
+"""
+
 def formate_pos(new_position, bounds):
     if new_position > bounds[1]:
         return bounds[1]
@@ -86,9 +124,13 @@ def formate_pos(new_position, bounds):
 
 
 
-
-
-
+"""
+********************************************************************************
+Particle:
+    * contain all infos about a given particle
+    * implements the moving operation
+********************************************************************************
+"""
 
 class Particle():
     def __init__(self, problem_space):
@@ -159,8 +201,13 @@ class Particle():
 
 
 
-
-
+"""
+********************************************************************************
+Space:
+    * contain all infos about the space
+    * implements all operations of PSO except move
+********************************************************************************
+"""
 
 class Space():
 
@@ -242,6 +289,13 @@ class Space():
 
 
 
+"""
+********************************************************************************
+algorithm:
+    * inherits from HPT_algo
+    * run GA
+********************************************************************************
+"""
 
 class algorithm(HPT_algo):
     def __init__(self, problem, max_evals, argv):

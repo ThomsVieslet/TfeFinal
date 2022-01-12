@@ -7,6 +7,11 @@ import pandas as pd
 from datetime import *
 from sklearn.preprocessing import OneHotEncoder
 
+"""
+********************************************************************************
+    * load training, validation and test sets from original datset.
+********************************************************************************
+"""
 
 def load():
     print("Loading...")

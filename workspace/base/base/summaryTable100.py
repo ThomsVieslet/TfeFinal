@@ -4,6 +4,13 @@ import pandas as pd
 import os
 import  subprocess
 
+"""
+********************************************************************************
+    * Test the evaluate the best configuration of each run and creates the
+        summary table.
+********************************************************************************
+"""
+
 
 directories = next(os.walk(os. getcwd()+"/results_history"))[1]
 
