@@ -51,6 +51,8 @@ The code is located in "workspace/base/base". It is composed of the following pa
                     
   
 
-## Code's working process
-
 ## Running experiments
+Each command line of each process in the bench_test_clus.py file run a simulation. 
+Ex: ["python", "parser.py", "prob1", "CASH", "ga", "100"]
+ In this command line, we have:
+ * 
