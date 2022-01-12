@@ -31,7 +31,10 @@ The code is located in "workspace/base/base". It is composed of the following pa
      * pso.py the pso method that can be applied on the previously defined search space
      * rs.py the rs method that can be applied on the previously defined search space
      * tpe.py the tpe method that can be applied on the previously defined search space
-     * (these method can easily adapted to be used for FS of MS only)
+     * (these method can easily adapted to be used for FS, MS or HPT only)
+     * _old_methods.py_
+     
+   * The prob? folders (one for each task):
                     
   
 
