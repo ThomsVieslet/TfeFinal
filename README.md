@@ -32,9 +32,17 @@ The code is located in "workspace/base/base". It is composed of the following pa
      * rs.py the rs method that can be applied on the previously defined search space
      * tpe.py the tpe method that can be applied on the previously defined search space
      * (these method can easily adapted to be used for FS, MS or HPT only)
-     * _old_methods.py_
+     * _old_methods_
      
    * The prob? folders (one for each task):
+     * load.py initially load the data from the original dataset and split it in three ways
+     * load_data.py load the train and validation (testing) set with the selected features
+     * model_run.py which evaluates a input configuration
+     * prob_space.py used for ambs to specify the search space
+     * The results folder to stor the results 
+     * The datasets folder to store the data
+     * The content folder to store savings of the model and a text file specifying the considered models
+    *
                     
   
 
