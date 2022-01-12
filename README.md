@@ -7,7 +7,14 @@ The code is located in "workspace/base/base". It is composed of the following pa
     * csvUtils.py which contains useful function to deal with csv files
     * problemUtils.py which contains functions used to map search space representations between them.
     * runner.py contains the run functions of all the steps called by parser.py
-    * _visual.py_ implements visuals representations used during system construction
+    * _visual.py_ 
+  * The FS folder:
+    * baseFS.py which implements a generic class for feature selection algorithms
+    * cash.py which is used in our simulations to add the features to the search space
+    * _from_model.py_
+    * _generic.py_
+  * The MS folder:
+    *
                     
   
 
