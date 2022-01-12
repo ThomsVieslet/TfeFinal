@@ -43,11 +43,11 @@ The code is located in "workspace/base/base". It is composed of the following pa
      * The datasets folder to store the data
      * The content folder to store savings of the model and a text file specifying the considered models
      
-    * summaryTable100.py and summaryTable500.py files evaluate the best configurations and create the summary tables.
-    * summaryStatsExtract.py extracts the stats from the summary tables
-    * openML_selector.py was used to collect the datasets from openML
-    * load_all.py splits original datasets of all task in three parts 
-    * boxPlots.py, plot_fs_ratio.py and scoreEvolution.py are scripts for the plots
+   * summaryTable100.py and summaryTable500.py files evaluate the best configurations and create the summary tables.
+   * summaryStatsExtract.py extracts the stats from the summary tables
+   * openML_selector.py was used to collect the datasets from openML
+   * load_all.py splits original datasets of all task in three parts 
+   * boxPlots.py, plot_fs_ratio.py and scoreEvolution.py are scripts for the plots
                     
   
 
