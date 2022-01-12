@@ -48,6 +48,7 @@ The code is located in "workspace/base/base". It is composed of the following pa
    * openML_selector.py was used to collect the datasets from openML
    * load_all.py splits original datasets of all task in three parts 
    * boxPlots.py, plot_fs_ratio.py and scoreEvolution.py are scripts for the plots
+   * the _unused_ folder
                     
   
 
@@ -58,4 +59,9 @@ Ex: ["python", "parser.py", "prob1", "CASH", "ga", "100"]
 
  In this command line, we have:
  * python and parser.py to run parser with the CASH, ga and 100 arguments
- * 
+ * CASH is to specify that all the steps are considered as a single optimization problem (FS and HPT could also be used but the methods have not be adapted)
+ * ga is to specify the method used to solve the otpimization problem 
+ * 100 is to specify a budget of 100 evaluations. "100s" would be interpreted as a 100 seconds budget.
+ 
+ 
+parser.py calls the different methods in utils/runner.py that runs each considered step. If we have CASH, the first two steps (FS and MS) only add the features, then the models together with their hyperparameters to the search space. Afterward, the search is conducted with HPT using the sepcified method.
