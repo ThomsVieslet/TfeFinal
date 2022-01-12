@@ -24,7 +24,14 @@ The code is located in "workspace/base/base". It is composed of the following pa
       * add_randomForestClassifier.py adds the randomForestClassifier model to the search space together with its hyperparameters and the constraints
       * add_randomForestRegressor.py adds the randomForestRegressor model to the search space together with its hyperparameters and the constraints
       * ambs_write.py adds the corresponding input model to the search sapce together with its hyperparameters and the constraints by writting inside the       prob_space.py file of the task
-     *
+   * The HPT folder:
+     * baseHPT.py which implements a generic class for hyperparameter tunning algorithms
+     * ambs.py the ambs method that can be applied on the previously defined search space
+     * ga.py the ga method that can be applied on the previously defined search space
+     * pso.py the pso method that can be applied on the previously defined search space
+     * rs.py the rs method that can be applied on the previously defined search space
+     * tpe.py the tpe method that can be applied on the previously defined search space
+     * (these method can easily adapted to be used for FS of MS only)
                     
   
 
