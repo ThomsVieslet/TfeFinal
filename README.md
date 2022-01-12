@@ -14,7 +14,10 @@ The code is located in "workspace/base/base". It is composed of the following pa
     * _from_model.py_
     * _generic.py_
   * The MS folder:
-    *
+    * baseMS.py which implements a generic class for model selection algorithms
+    * cash.py which is used in our simulations to add the models and the constraints to the search space
+    * The model_utils folder:
+      * add_kneighborsClassifier.py
                     
   
 
