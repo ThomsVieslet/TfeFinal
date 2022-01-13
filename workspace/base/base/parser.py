@@ -17,15 +17,15 @@ if __name__ == '__main__':
 
     problem = sys.argv.pop(0)
 
-    """
-    ?
+   
+    
 
     bashCmd1 = ["python", problem + "/prob_space.py"]
 
     process1 = subprocess.Popen(bashCmd1, stdout=subprocess.PIPE)
 
     output1, error1 = process1.communicate()
-    """
+   
 
     load = importlib.import_module(problem+".load", package=None)
     load.load()
